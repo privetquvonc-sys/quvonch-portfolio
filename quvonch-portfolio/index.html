@@ -1,217 +1,252 @@
 <!DOCTYPE html>
 <html lang="uz">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Quvonch | Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet"/>
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav class="navbar">
-    <div class="logo">Q<span>.</span></div>
-    <ul class="nav-links">
-      <li><a href="#home">Bosh sahifa</a></li>
-      <li><a href="#about">Men haqimda</a></li>
-      <li><a href="#skills">Ko'nikmalar</a></li>
-      <li><a href="#goals">Maqsadim</a></li>
-      <li><a href="#contact">Bog'lanish</a></li>
-    </ul>
-    <div class="hamburger" onclick="toggleMenu()">
-      <span></span><span></span><span></span>
-    </div>
-  </nav>
+<!-- CURSOR -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-blur" id="cursorBlur"></div>
 
-  <!-- HERO -->
-  <section class="hero" id="home">
-    <div class="hero-bg"></div>
-    <div class="hero-content">
-      <div class="badge">🎓 Yosh Talaba</div>
-      <h1>Salom, men <span>Quvonch</span></h1>
-      <p class="hero-sub">AI Enthusiast &amp; Videographer</p>
-      <p class="hero-desc">
-        Zamonaviy texnologiyalar va ijodiy videografiya olamida o'z yo'limni topayotgan starter.
-      </p>
-      <div class="hero-btns">
-        <a href="#contact" class="btn btn-primary">Bog'lanish</a>
-        <a href="#about" class="btn btn-outline">Ko'proq</a>
-      </div>
-    </div>
-    <div class="hero-visual">
-      <div class="avatar-ring">
-        <div class="avatar">Q</div>
-        <div class="orbit orbit-1"><div class="dot"></div></div>
-        <div class="orbit orbit-2"><div class="dot"></div></div>
-      </div>
-    </div>
-    <div class="scroll-hint">↓ Pastga</div>
-  </section>
+<!-- PARTICLES -->
+<canvas id="particles"></canvas>
 
-  <!-- ABOUT -->
-  <section class="about" id="about">
-    <div class="container">
-      <div class="section-label">Haqimda</div>
-      <h2 class="section-title">Men kim<span>man?</span></h2>
-      <div class="about-grid">
-        <div class="about-card">
-          <div class="about-icon">🤖</div>
-          <h3>AI Tajribasi</h3>
-          <p>Sun'iy intellekt sohasini o'rganib, amaliy loyihalarda qo'llash bo'yicha tajriba to'playapman.</p>
-        </div>
-        <div class="about-card">
-          <div class="about-icon">🎬</div>
-          <h3>Videografer</h3>
-          <p>Video yaratish, montaj qilish va vizual kontentni professional darajada tayyorlash.</p>
-        </div>
-        <div class="about-card">
-          <div class="about-icon">🚀</div>
-          <h3>Starter</h3>
-          <p>Hali yo'lning boshidaman, lekin har kuni o'sib, yangi narsalar o'rganishga ishtiyoqliman.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+<!-- NAV -->
+<nav class="navbar" id="navbar">
+  <div class="nav-logo">Quvonch<span>.</span></div>
+  <ul class="nav-links">
+    <li><a href="#home">Bosh</a></li>
+    <li><a href="#about">Haqimda</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#goals">Maqsad</a></li>
+    <li><a href="#contact">Aloqa</a></li>
+  </ul>
+  <div class="nav-cta"><a href="#contact">Bog'lanish →</a></div>
+  <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</nav>
 
-  <!-- SKILLS -->
-  <section class="skills" id="skills">
-    <div class="container">
-      <div class="section-label">Ko'nikmalar</div>
-      <h2 class="section-title">Nima bila<span>man?</span></h2>
-      <div class="skills-grid">
-        <div class="skill-item">
-          <div class="skill-icon">🤖</div>
-          <div class="skill-info">
-            <span>AI & Machine Learning</span>
-            <div class="skill-bar"><div class="skill-fill" style="width: 60%"></div></div>
-            <small>60%</small>
-          </div>
-        </div>
-        <div class="skill-item">
-          <div class="skill-icon">🎬</div>
-          <div class="skill-info">
-            <span>Videografiya</span>
-            <div class="skill-bar"><div class="skill-fill" style="width: 75%"></div></div>
-            <small>75%</small>
-          </div>
-        </div>
-        <div class="skill-item">
-          <div class="skill-icon">✂️</div>
-          <div class="skill-info">
-            <span>Video Montaj</span>
-            <div class="skill-bar"><div class="skill-fill" style="width: 70%"></div></div>
-            <small>70%</small>
-          </div>
-        </div>
-        <div class="skill-item">
-          <div class="skill-icon">💡</div>
-          <div class="skill-info">
-            <span>Ijodkorlik</span>
-            <div class="skill-bar"><div class="skill-fill" style="width: 85%"></div></div>
-            <small>85%</small>
-          </div>
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="hero-tag">
+      <span class="dot-live"></span> Yosh Talaba · Starter
+    </div>
+    <h1 class="hero-title">
+      <span class="line">Salom, men</span>
+      <span class="line gradient-text" id="typedName">Quvonch</span>
+    </h1>
+    <div class="hero-roles">
+      <span>🤖 AI Enthusiast</span>
+      <span class="sep">·</span>
+      <span>🎬 Videographer</span>
+      <span class="sep">·</span>
+      <span>🚀 Creator</span>
+    </div>
+    <p class="hero-desc">Zamonaviy AI texnologiyalari va ijodiy videografiya orqali kelajakni qurayapman.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-glow">Bog'lanish <span>→</span></a>
+      <a href="#about" class="btn-ghost">Ko'proq bilish</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><strong>AI</strong><span>Tajriba</span></div>
+      <div class="vline"></div>
+      <div class="stat"><strong>Video</strong><span>Montaj</span></div>
+      <div class="vline"></div>
+      <div class="stat"><strong>2026</strong><span>Yil</span></div>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="glow-ring">
+      <div class="inner-ring">
+        <div class="profile-card">
+          <div class="profile-emoji">👨‍💻</div>
+          <div class="profile-name">Quvonch</div>
+          <div class="profile-role">AI · Video</div>
         </div>
       </div>
     </div>
-  </section>
+    <div class="float-badge b1">🤖 AI</div>
+    <div class="float-badge b2">🎬 Video</div>
+    <div class="float-badge b3">🛍️ E-com</div>
+    <div class="float-badge b4">✨ Creator</div>
+  </div>
+  <div class="scroll-hint">
+    <div class="scroll-wheel"></div>
+    <span>Pastga</span>
+  </div>
+</section>
 
-  <!-- GOALS -->
-  <section class="goals" id="goals">
-    <div class="container">
-      <div class="section-label">Kelajak</div>
-      <h2 class="section-title">Maqsadi<span>m</span></h2>
-      <div class="goal-main">
-        <div class="goal-big">
-          <div class="goal-emoji">🛍️</div>
-          <div class="goal-text">
-            <h3>Katta Onlayn Do'kon</h3>
-            <p>
-              Mening asosiy orzuim — O'zbekistondagi eng yirik onlayn do'konlardan birini yaratish. 
-              AI texnologiyalari va zamonaviy dizayn bilan qurollangan, minglab mijozlarga xizmat ko'rsatadigan 
-              platforma barpo etish.
-            </p>
-            <div class="goal-tags">
-              <span>🤖 AI bilan ishlaydi</span>
-              <span>📦 Keng assortiment</span>
-              <span>🚀 Tez yetkazib berish</span>
-              <span>💳 Onlayn to'lov</span>
-            </div>
-          </div>
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="sec-tag">// haqimda</div>
+    <h2 class="sec-title">Men kim<span>man?</span></h2>
+    <div class="about-grid">
+      <div class="about-card glass" data-aos>
+        <div class="card-num">01</div>
+        <div class="card-icon">🤖</div>
+        <h3>AI Tajribasi</h3>
+        <p>ChatGPT, Midjourney, Runway ML kabi zamonaviy AI vositalarni o'rganib, real loyihalarda qo'llayapman.</p>
+      </div>
+      <div class="about-card glass" data-aos>
+        <div class="card-num">02</div>
+        <div class="card-icon">🎬</div>
+        <h3>Videografer</h3>
+        <p>Video yaratish, montaj qilish va vizual kontentni professional darajada tayyorlash — mening kuchim.</p>
+      </div>
+      <div class="about-card glass" data-aos>
+        <div class="card-num">03</div>
+        <div class="card-icon">🚀</div>
+        <h3>Starter & Creator</h3>
+        <p>Hali yo'lning boshidaman, lekin har kuni o'sib, katta maqsadlar sari intilyapman.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="skills" id="skills">
+  <div class="container">
+    <div class="sec-tag">// ko'nikmalar</div>
+    <h2 class="sec-title">Ishlatadigan <span>Vositalar</span></h2>
+    <div class="skills-wrap">
+      <div class="skill-group glass" data-aos>
+        <div class="sg-header"><span class="sg-icon">🤖</span><h3>AI Vositalar</h3></div>
+        <div class="tool-list">
+          <div class="tool">ChatGPT</div>
+          <div class="tool">Midjourney</div>
+          <div class="tool">Runway ML</div>
+          <div class="tool">ElevenLabs</div>
+          <div class="tool">Sora</div>
         </div>
-        <div class="goal-steps">
-          <div class="step done">
-            <div class="step-dot">✓</div>
-            <div class="step-info">
-              <strong>AI o'rganish</strong>
-              <span>Boshlandi</span>
-            </div>
+      </div>
+      <div class="skill-group glass" data-aos>
+        <div class="sg-header"><span class="sg-icon">🎬</span><h3>Video & Montaj</h3></div>
+        <div class="tool-list">
+          <div class="tool">CapCut</div>
+          <div class="tool">Premiere Pro</div>
+          <div class="tool">After Effects</div>
+          <div class="tool">DaVinci Resolve</div>
+        </div>
+      </div>
+      <div class="skill-group glass" data-aos>
+        <div class="sg-header"><span class="sg-icon">🎨</span><h3>Dizayn & Foto</h3></div>
+        <div class="tool-list">
+          <div class="tool">Canva</div>
+          <div class="tool">Lightroom</div>
+          <div class="tool">Photoshop</div>
+          <div class="tool">Figma</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GOALS -->
+<section class="goals" id="goals">
+  <div class="container">
+    <div class="sec-tag">// maqsadim</div>
+    <h2 class="sec-title">Katta <span>Orzu</span></h2>
+    <div class="goal-box glass" data-aos>
+      <div class="goal-left">
+        <div class="goal-big-icon">🛍️</div>
+        <h3>Katta Onlayn Do'kon</h3>
+        <p>Kelajakda O'zbekistonda AI texnologiyalari asosida qurilgan, minglab mijozlarga xizmat ko'rsatadigan katta onlayn do'kon yaratmoqchiman.</p>
+        <div class="goal-chips">
+          <span>🤖 AI bazali</span>
+          <span>📦 Keng assortiment</span>
+          <span>🚀 Tez yetkazib berish</span>
+          <span>💳 Onlayn to'lov</span>
+        </div>
+      </div>
+      <div class="goal-right">
+        <div class="roadmap">
+          <div class="rm-item done">
+            <div class="rm-dot"><span>✓</span></div>
+            <div class="rm-text"><strong>AI o'rganish</strong><small>Boshlandi ✅</small></div>
           </div>
-          <div class="step done">
-            <div class="step-dot">✓</div>
-            <div class="step-info">
-              <strong>Portfolio yaratish</strong>
-              <span>Bajarildi</span>
-            </div>
+          <div class="rm-line done"></div>
+          <div class="rm-item done">
+            <div class="rm-dot"><span>✓</span></div>
+            <div class="rm-text"><strong>Portfolio yaratish</strong><small>Bajarildi ✅</small></div>
           </div>
-          <div class="step active">
-            <div class="step-dot">→</div>
-            <div class="step-info">
-              <strong>Tajriba to'plash</strong>
-              <span>Jarayonda...</span>
-            </div>
+          <div class="rm-line"></div>
+          <div class="rm-item active">
+            <div class="rm-dot"><span>→</span></div>
+            <div class="rm-text"><strong>Tajriba to'plash</strong><small>Jarayonda...</small></div>
           </div>
-          <div class="step">
-            <div class="step-dot">○</div>
-            <div class="step-info">
-              <strong>Onlayn do'kon ishga tushirish</strong>
-              <span>Kelajakda</span>
-            </div>
+          <div class="rm-line"></div>
+          <div class="rm-item">
+            <div class="rm-dot"><span>○</span></div>
+            <div class="rm-text"><strong>Onlayn do'kon</strong><small>Kelajakda 🎯</small></div>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- CONTACT -->
-  <section class="contact" id="contact">
-    <div class="container">
-      <div class="section-label">Aloqa</div>
-      <h2 class="section-title">Bog'la<span>ning!</span></h2>
-      <p class="contact-desc">Hamkorlik, loyiha yoki shunchaki suhbat uchun menga yozing!</p>
-      <div class="contact-cards">
-        <a href="tel:+998940918281" class="contact-card">
-          <div class="c-icon">📞</div>
-          <div class="c-info">
-            <span>Telefon</span>
-            <strong>+998 94 091 82 81</strong>
-          </div>
-        </a>
-        <a href="https://t.me/ofesda" target="_blank" class="contact-card">
-          <div class="c-icon">✈️</div>
-          <div class="c-info">
-            <span>Telegram (shaxsiy)</span>
-            <strong>@ofesda</strong>
-          </div>
-        </a>
-        <a href="https://instagram.com/your.quvonch" target="_blank" class="contact-card">
-          <div class="c-icon">📸</div>
-          <div class="c-info">
-            <span>Instagram</span>
-            <strong>@your.quvonch</strong>
-          </div>
-        </a>
+<!-- GAME -->
+<section class="game-section" id="game">
+  <div class="container">
+    <div class="sec-tag">// mini o'yin</div>
+    <h2 class="sec-title">Ko'p bosing — <span>Rekord qo'ying!</span></h2>
+    <p class="game-desc">10 soniyada necha marta bosa olasiz?</p>
+    <div class="game-box glass">
+      <div class="game-stats">
+        <div class="gs"><strong id="clickCount">0</strong><span>Bosish</span></div>
+        <div class="gs"><strong id="timeLeft">10</strong><span>Soniya</span></div>
+        <div class="gs"><strong id="bestScore">0</strong><span>Rekord</span></div>
       </div>
+      <button class="game-btn" id="gameBtn" onclick="handleClick()">
+        <span id="gameBtnText">🚀 Boshlash uchun bosing!</span>
+      </button>
+      <div class="game-msg" id="gameMsg"></div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <p>© 2024 <strong>Quvonch</strong> — Barcha huquqlar himoyalangan.</p>
-    <p class="footer-quote">"Har bir katta narsa kichik qadamdan boshlanadi." 🌟</p>
-  </footer>
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="sec-tag">// bog'lanish</div>
+    <h2 class="sec-title">Aloqaga <span>Chiqing!</span></h2>
+    <p class="contact-sub">Hamkorlik, loyiha yoki shunchaki suhbat uchun menga yozing!</p>
+    <div class="contact-grid">
+      <a href="https://t.me/ofesda" target="_blank" class="contact-card glass" data-aos>
+        <div class="cc-icon tg">✈️</div>
+        <div class="cc-info">
+          <span>Telegram</span>
+          <strong>@ofesda</strong>
+        </div>
+        <div class="cc-arrow">→</div>
+      </a>
+      <a href="https://instagram.com/your.quvonch" target="_blank" class="contact-card glass" data-aos>
+        <div class="cc-icon ig">📸</div>
+        <div class="cc-info">
+          <span>Instagram</span>
+          <strong>@your.quvonch</strong>
+        </div>
+        <div class="cc-arrow">→</div>
+      </a>
+    </div>
+  </div>
+</section>
 
-  <script src="script.js"></script>
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-logo">Quvonch<span>.</span></div>
+    <p>"Har bir katta narsa kichik qadamdan boshlanadi." 🌟</p>
+    <p class="footer-copy">© 2026 Quvonch. Barcha huquqlar himoyalangan.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
